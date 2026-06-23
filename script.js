@@ -1,6 +1,26 @@
 const cardContainer = document.getElementById("card-container");
+const timeItems = document.querySelectorAll(".card-user__time-item");
 
-const appendItem = (item) => {
+let allData = [];
+
+fetch("data.json")
+  .then((response) => {
+    if (!response.ok) return console.log("Oops! Something went wrong!");
+
+    return response.json();
+  })
+  .then((data) => {
+    allData = data;
+    populateDOM(data);
+  });
+
+const populateDOM = (data) => {
+  data.forEach((item) => {
+    appendItem(item);
+  });
+};
+
+const appendItem = (item, timeframe = "weekly") => {
   const card = document.createElement("div");
   if (item.title === "Work") {
     item = { ...item, iconName: "work", bgColor: "orange" };
@@ -35,8 +55,8 @@ const appendItem = (item) => {
           />
         </div>
         <div class="card__body">
-          <h2 class="card__time">${item.timeframes.weekly.current}hrs</h2>
-          <p class="card__previous-time">Last Week - ${item.timeframes.weekly.previous}hrs</p>
+          <h2 class="card__time">${item.timeframes[timeframe].current}hrs</h2>
+          <p class="card__previous-time">${getPreviousLabel(timeframe)} - ${item.timeframes[timeframe].previous}hrs</p>
         </div>
       </div>
     </div>
@@ -44,27 +64,26 @@ const appendItem = (item) => {
   cardContainer.appendChild(card);
 };
 
-const populateDOM = (data) => {
-  data.forEach((item) => {
-    appendItem(item);
-  });
+const getPreviousLabel = (timeframe) => {
+  if (timeframe === "daily") return "Yesterday";
+  if (timeframe === "weekly") return "Last Week";
+  if (timeframe === "monthly") return "Last Month";
 };
 
-fetch("data.json")
-  .then((response) => {
-    if (!response.ok) return console.log("Oops! Something went wrong!");
-
-    return response.json();
-  })
-  .then((data) => {
-    populateDOM(data);
+timeItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    const timeframe = item.textContent.trim().toLowerCase();
+    timeItems.forEach((timeItem) => {
+      timeItem.classList.remove("card-user__time-item--active");
+    });
+    item.classList.add("card-user__time-item--active");
+    renderCards(timeframe);
   });
+});
 
-/*
-
-1. ambil data cardContainer yang id nya card-container
-2. buat fungsi untuk menambah item card
-3. buat fungsi untuk populate data
-4. buat fungsi untuk fetch data dari json
-
-*/
+const renderCards = (timeframe) => {
+  cardContainer.innerHTML = "";
+  allData.forEach((item) => {
+    appendItem(item, timeframe);
+  });
+};

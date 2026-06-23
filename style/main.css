@@ -249,6 +249,10 @@ body {
   font-size: 1.8rem;
   font-weight: 400;
   color: #7078c9;
+  cursor: pointer;
+}
+.card-user__time-item--active {
+  color: #fff;
 }
 
 /*# sourceMappingURL=main.css.map */

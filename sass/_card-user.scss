@@ -93,5 +93,10 @@
   &__time-item {
     @include v.text-preset-5-regular;
     color: v.$purple-500;
+    cursor: pointer;
+
+    &--active {
+      color: v.$white;
+    }
   }
 }
