@@ -32,11 +32,15 @@
   }
 
   &__banner-img {
-    width: 8rem;
-    height: 8rem;
+    width: 10rem;
+    height: 6rem;
     object-fit: cover;
     margin-right: 2rem;
-    margin-top: v.$spacing-minus-100;
+
+    @media screen and (min-width: 48rem) {
+      width: 6rem;
+      height: 4rem;
+    }
   }
 
   &__container {
@@ -44,6 +48,14 @@
     padding: v.$spacing-300;
     border-radius: 1rem;
     margin-top: v.$spacing-minus-100;
+
+    @media screen and (min-width: 48rem) {
+      margin-top: v.$spacing-minus-200;
+    }
+
+    @media screen and (min-width: 64rem) {
+      padding: v.$spacing-500 v.$spacing-300;
+    }
   }
 
   &__header {
@@ -60,6 +72,10 @@
   &__ellipsis {
     width: 3rem;
     height: 100%;
+
+    @media screen and (min-width: 48rem) {
+      width: 2rem;
+    }
   }
 
   &__body {
@@ -67,11 +83,23 @@
     justify-content: space-between;
     align-items: center;
     margin-top: v.$spacing-100;
+
+    @media screen and (min-width: 48rem) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: start;
+      margin-top: v.$spacing-200;
+      gap: v.$spacing-100;
+    }
   }
 
   &__time {
     @include v.text-preset-3-light;
     color: v.$white;
+
+    @media screen and (min-width: 48rem) {
+      @include v.text-preset-1-light;
+    }
   }
 
   &__previous-time {

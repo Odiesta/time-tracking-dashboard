@@ -4,6 +4,11 @@
   background-color: v.$navy-900;
   border-radius: 0 0 1rem 1rem;
 
+  @media screen and (min-width: 64rem) {
+    display: grid;
+    grid-template-rows: 65% 35%;
+  }
+
   &__profile {
     background-color: v.$purple-600;
     display: flex;
@@ -12,6 +17,17 @@
     gap: v.$spacing-300;
     padding: v.$spacing-300;
     border-radius: 1rem;
+
+    @media screen and (min-width: 48rem) {
+      justify-content: start;
+    }
+
+    @media screen and (min-width: 64rem) {
+      flex-direction: column;
+      align-items: start;
+      justify-content: start;
+      padding: v.$spacing-300 v.$spacing-300;
+    }
   }
 
   &__img-wrapper {
@@ -22,6 +38,11 @@
     height: 6.4rem;
     border: 3px solid v.$white;
     border-radius: 50%;
+
+    @media screen and (min-width: 64rem) {
+      width: 7.8rem;
+      height: 7.8rem;
+    }
   }
 
   &__report-wrapper {
@@ -36,6 +57,10 @@
     color: v.$white;
     order: 2;
     line-height: 1;
+
+    @media screen and (min-width: 64rem) {
+      @include v.text-preset-2-light;
+    }
   }
 
   &__text {
@@ -52,6 +77,17 @@
     display: flex;
     justify-content: space-evenly;
     padding: v.$spacing-200 0;
+
+    @media screen and (min-width: 48rem) {
+      justify-content: center;
+      gap: v.$spacing-500;
+    }
+
+    @media screen and (min-width: 64rem) {
+      flex-direction: column;
+      padding: v.$spacing-300;
+      gap: v.$spacing-300;
+    }
   }
 
   &__time-item {
