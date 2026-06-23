@@ -1,24 +1,81 @@
 @use "variables" as v;
 
 .card {
+  &__banner {
+    height: 5rem;
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+    position: relative;
+    z-index: -1;
+    display: flex;
+    justify-content: end;
+    overflow: hidden;
+
+    &--orange {
+      background-color: v.$orange;
+    }
+    &--blue {
+      background-color: v.$blue-300;
+    }
+    &--pink {
+      background-color: v.$pink-400;
+    }
+    &--green {
+      background-color: v.$green-400;
+    }
+    &--purple {
+      background-color: v.$purple-700;
+    }
+    &--yellow {
+      background-color: v.$yellow-300;
+    }
+  }
+
+  &__banner-img {
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+    margin-right: 2rem;
+    margin-top: v.$spacing-minus-100;
+  }
+
   &__container {
+    background-color: v.$navy-900;
+    padding: v.$spacing-300;
+    border-radius: 1rem;
+    margin-top: v.$spacing-minus-100;
   }
 
   &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__activity {
+    @include v.text-preset-5-medium;
+    color: v.$white;
   }
 
   &__ellipsis {
+    width: 3rem;
+    height: 100%;
   }
 
   &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: v.$spacing-100;
   }
 
   &__time {
+    @include v.text-preset-3-light;
+    color: v.$white;
   }
 
   &__previous-time {
+    @include v.text-preset-6-regular;
+    color: v.$navy-200;
   }
 }

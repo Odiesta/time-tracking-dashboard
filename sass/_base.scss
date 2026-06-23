@@ -16,4 +16,7 @@ body {
 }
 
 .container {
+  padding: v.$spacing-300;
+  display: grid;
+  gap: v.$spacing-200;
 }

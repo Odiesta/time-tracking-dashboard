@@ -13,4 +13,132 @@ body {
   background-color: #0e1323;
 }
 
+.container {
+  padding: 2.4rem;
+  display: grid;
+  gap: 1.6rem;
+}
+
+.card__banner {
+  height: 5rem;
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+  position: relative;
+  z-index: -1;
+  display: flex;
+  justify-content: end;
+  overflow: hidden;
+}
+.card__banner--orange {
+  background-color: #ff8b64;
+}
+.card__banner--blue {
+  background-color: #55c2e6;
+}
+.card__banner--pink {
+  background-color: #ff5e7d;
+}
+.card__banner--green {
+  background-color: #4bcf82;
+}
+.card__banner--purple {
+  background-color: #7335d2;
+}
+.card__banner--yellow {
+  background-color: #f1c75b;
+}
+.card__banner-img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  margin-right: 2rem;
+  margin-top: -0.8rem;
+}
+.card__container {
+  background-color: #1c204b;
+  padding: 2.4rem;
+  border-radius: 1rem;
+  margin-top: -0.8rem;
+}
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__activity {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+}
+.card__ellipsis {
+  width: 3rem;
+  height: 100%;
+}
+.card__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+.card__time {
+  font-size: 3.2rem;
+  font-weight: 300;
+  color: #fff;
+}
+.card__previous-time {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #bbc0ff;
+}
+
+.card-user {
+  background-color: #1c204b;
+  border-radius: 0 0 1rem 1rem;
+}
+.card-user__profile {
+  background-color: #5747ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+  padding: 2.4rem;
+  border-radius: 1rem;
+}
+.card-user__img {
+  width: 6.4rem;
+  height: 6.4rem;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+.card-user__report-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.card-user__name {
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: #fff;
+  order: 2;
+  line-height: 1;
+}
+.card-user__text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #bbc0ff;
+  order: 1;
+}
+.card-user__time-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1.6rem 0;
+}
+.card-user__time-item {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #7078c9;
+}
+
 /*# sourceMappingURL=main.css.map */

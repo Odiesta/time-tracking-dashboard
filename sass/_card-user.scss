@@ -1,30 +1,61 @@
 @use "variables" as v;
 
 .card-user {
+  background-color: v.$navy-900;
+  border-radius: 0 0 1rem 1rem;
+
   &__profile {
+    background-color: v.$purple-600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: v.$spacing-300;
+    padding: v.$spacing-300;
+    border-radius: 1rem;
   }
 
   &__img-wrapper {
   }
 
   &__img {
+    width: 6.4rem;
+    height: 6.4rem;
+    border: 3px solid v.$white;
+    border-radius: 50%;
   }
 
   &__report-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: v.$spacing-100;
   }
 
   &__name {
+    @include v.text-preset-4-light;
+    color: v.$white;
+    order: 2;
+    line-height: 1;
   }
 
   &__text {
+    @include v.text-preset-6-regular;
+    color: v.$navy-200;
+    order: 1;
   }
 
   &__time-wrapper {
   }
 
   &__time-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding: v.$spacing-200 0;
   }
 
   &__time-item {
+    @include v.text-preset-5-regular;
+    color: v.$purple-500;
   }
 }
