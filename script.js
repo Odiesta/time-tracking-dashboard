@@ -22,19 +22,7 @@ const populateDOM = (data) => {
 
 const appendItem = (item, timeframe = "weekly") => {
   const card = document.createElement("div");
-  if (item.title === "Work") {
-    item = { ...item, iconName: "work", bgColor: "orange" };
-  } else if (item.title === "Play") {
-    item = { ...item, iconName: "play", bgColor: "blue" };
-  } else if (item.title === "Study") {
-    item = { ...item, iconName: "study", bgColor: "pink" };
-  } else if (item.title === "Exercise") {
-    item = { ...item, iconName: "exercise", bgColor: "green" };
-  } else if (item.title === "Social") {
-    item = { ...item, iconName: "social", bgColor: "purple" };
-  } else if (item.title === "Self Care") {
-    item = { ...item, iconName: "self-care", bgColor: "yellow" };
-  }
+  item = getIconAndBgColor(item.title, item);
 
   card.innerHTML = `
     <div class="card">
@@ -62,6 +50,22 @@ const appendItem = (item, timeframe = "weekly") => {
     </div>
   `;
   cardContainer.appendChild(card);
+};
+
+const getIconAndBgColor = (title, item) => {
+  if (title === "Work") {
+    return { ...item, iconName: "work", bgColor: "orange" };
+  } else if (item.title === "Play") {
+    return { ...item, iconName: "play", bgColor: "blue" };
+  } else if (item.title === "Study") {
+    return { ...item, iconName: "study", bgColor: "pink" };
+  } else if (item.title === "Exercise") {
+    return { ...item, iconName: "exercise", bgColor: "green" };
+  } else if (item.title === "Social") {
+    return { ...item, iconName: "social", bgColor: "purple" };
+  } else if (item.title === "Self Care") {
+    return { ...item, iconName: "self-care", bgColor: "yellow" };
+  }
 };
 
 const getPreviousLabel = (timeframe) => {
